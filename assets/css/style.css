@@ -1,0 +1,58 @@
+h1 {
+    font-size: 50px;
+    padding-bottom: 25px;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+header button {
+    padding-top: 5px;
+    padding-left: 10px;
+    color: blue;
+    background-color: white;
+    border: 0px;
+    font-size: 30px;
+}
+
+header p {
+    padding-top: 5px;
+    padding-right: 10px;
+    font-size: 40px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 120px;
+}
+
+main p {
+    text-align: center;
+    font-size: 25px;
+}
+
+main button {
+    margin: 15px;
+    background-color: blue;
+    color: white;
+    font-size: 25px;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+main button:hover {
+    background-color: #247ec9;
+}
+
+.answers {
+    margin-left: 20%;
+}
+
+button:hover {
+    cursor: pointer;
+}
