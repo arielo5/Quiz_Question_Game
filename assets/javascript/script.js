@@ -57,6 +57,40 @@ for (i in choices) {
     choices[i].setAttribute("id", (parseInt(i) + 1).toString());
     choices[i].setAttribute("class", "answers")
 }
+startBt.addEventListener("click", start);
+
+intro.addEventListener("click", function(event) {
+    let element = event.target;
+
+    if (element.matches(".answers")) {
+        verifyAns(element);
+    }
+});
+
+submitBt.addEventListener("click", function() {
+    let randObj = {
+        names: inputEl.value,
+        scores: time
+    };
+    highScores.push(randObj);
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+    openHs();
+});
+
+viewHs.addEventListener("click", openHs)
+
+
+clearHs.addEventListener("click", function() {
+    localStorage.setItem("highScores", JSON.stringify([]));
+    highScores = [];
+    for (i in randVar) {
+        ulEl.children[i].textContent = "";
+    }
+    console.log(ulEl)
+    ulEl.setAttribute("style", "display: none;");
+});
+
+resetBt.addEventListener("click", reset);
 
 intro.appendChild(response);
 
@@ -208,37 +242,3 @@ function start() {
     return;
 };
 
-startBt.addEventListener("click", start);
-
-intro.addEventListener("click", function(event) {
-    let element = event.target;
-
-    if (element.matches(".answers")) {
-        verifyAns(element);
-    }
-});
-
-submitBt.addEventListener("click", function() {
-    let randObj = {
-        names: inputEl.value,
-        scores: time
-    };
-    highScores.push(randObj);
-    localStorage.setItem("highScores", JSON.stringify(highScores));
-    openHs();
-});
-
-viewHs.addEventListener("click", openHs)
-
-
-clearHs.addEventListener("click", function() {
-    localStorage.setItem("highScores", JSON.stringify([]));
-    highScores = [];
-    for (i in randVar) {
-        ulEl.children[i].textContent = "";
-    }
-    console.log(ulEl)
-    ulEl.setAttribute("style", "display: none;");
-});
-
-resetBt.addEventListener("click", reset);
